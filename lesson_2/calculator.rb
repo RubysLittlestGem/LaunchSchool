@@ -3,9 +3,6 @@
 # performs the operation on the specified arguments
 # displays the result
 
-# answer = Kernel.gets()
-# Kernelputs(answer)
-
 
 Kernel.puts("Welcome to Calculator!")
 
