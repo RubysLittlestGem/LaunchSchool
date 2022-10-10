@@ -820,30 +820,62 @@
 #   return true
 # end
 
-# Alyssa reviewed Ben's code and says "It's a good start,
-# but you missed a few things. You're not returning a false condition,
-# and you're not handling the case that there are more or 
-# fewer than 4 components to the IP address (e.g. "4.5.5" or "1.2.3.4.5"
-# should be invalid)."
-
-# Help Ben fix his code.
-
-
-def dot_separated_ip_address?(input_string)
-  dot_separated_words = input_string.split(".")
-  while dot_separated_words.size > 0 do
-    word = dot_separated_words.pop
-    break unless is_an_ip_number?(word)
-  end
-  if dot_separated_words == 4 
-  return true
-  else
-  return false
-  end
-end
+# # Alyssa reviewed Ben's code and says "It's a good start,
+# # but you missed a few things. You're not returning a false condition,
+# # and you're not handling the case that there are more or 
+# # fewer than 4 components to the IP address (e.g. "4.5.5" or "1.2.3.4.5"
+# # should be invalid)."
+# 
+# # Help Ben fix his code.
 
 
-p dot_separated_ip_address?("10.4.5.11")
+# # There are several ways to fix this. To determine if there are exactly 4
+# # dot-separated "words" in the string, you can simply add a check
+# # for dot_separated_words.size after splitting the string.
+# 
+# # The other error in Ben's code is that instead of returning
+# # false upon encountering a non-numeric component, 
+# # he used break to break out of the while loop. Once he breaks,
+# # control falls through to the return true statement. 
+
+
+
+
+# def dot_separated_ip_address?(input_string)
+#   dot_separated_words = input_string.split(".")
+#   return false unless dot_separated_words == 4  #=> add false check
+  
+#   while dot_separated_words.size > 0 do
+#     word = dot_separated_words.pop
+#     return false unless is_an_ip_number?(word) #=> add false check
+#   end
+  
+#   true  #=> return true only if all conditions are met
+# end
+
+
+# # Note: Ben's original return true on the last line of the method 
+# # can be shortened to just true. This is because Ruby returns the 
+# # result of the last evaluated expression.
+
+
+
+# Summary
+# Hopefully these practice problems were both fun and challenging,
+# and along the way, you were able to exercise your debugging skills
+# and problem solving skills. If you found yourself constantly 
+# looking up Ruby documentation or Googling for answers,
+# that's completely normal and expected. There's no way you can
+# remember everything needed to solve interesting problems at this point.
+# Keep referring to documentation and keep Googling; 
+# the only way to move knowledge into long term memory is to keep
+# running into them.
+
+# In some of these practice problems you will have worked with Strings,
+# Arrays, and Hashes. Working with these particular structures
+# is an important part of programming - both with Ruby and in general.
+# In the next lesson we will explore them in much more detail.
+
 
 
 

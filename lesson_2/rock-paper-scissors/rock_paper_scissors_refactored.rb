@@ -64,7 +64,7 @@ loop do
     loss += 1
   end
 
-  break if win == 5 || loss == 5
+  break if win == 20 || loss == 20
 end
 
 prompt("wins: #{win}")
